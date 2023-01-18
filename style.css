@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 1rem;
+  background-color: white;
+  justify-content: space-between;
+  z-index: 9999;
+
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+
+.link {
+  padding: 2em;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.img-link {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.logo-and-name {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 2rem;
+}
+
+.logo-name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.hamburger-svg {
+  margin-right: 1em;
+}
+
+.hamburger-svg:hover {
+  cursor: pointer;
+}
+
+/*hero banner*/
+
+.hero-slide {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  display: flex;
+  object-fit: contain;
+  position: relative;
+  height: 300px;
+}
+
+.hero-image {
+  object-fit: cover;
+  z-index: -30;
+  width: 100%;
+  filter: brightness(50%);
+}
+
+.header-and-description {
+  position: absolute;
+
+  margin-top: 160px;
+  margin-left: 60px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.hero-header {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero-description {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/*Slideshow on aparments*/
+.listed-header {
+  padding: 1rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.apartment-container {
+  background-color: white;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+.apartment-container::-webkit-scrollbar {
+  display: none;
+}
+
+.aparment-info {
+  padding: 1rem;
+  height: 380px;
+}
+.slide-image {
+  height: 300px;
+  width: 450px;
+  overflow: hidden;
+}
+.slide-image:hover {
+  opacity: 70%;
+}
+
+.name-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartment-name,
+.aparment-description {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.apartment-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.rent-price {
+  background-color: green;
+  align-items: center;
+  color: white;
+}
+.aparment-description {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.previous-btn,
+.next-btn {
+  border: none;
+  height: 250px;
+  width: 8vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 40;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: lightgray;
+  padding: 1rem;
+  margin-top: 1em;
+}
+.previous-btn {
+  left: 0;
+  opacity: 70%;
+}
+.next-btn {
+  right: 0;
+  opacity: 70%;
+}
+
+/*Mobile menu*/
+.hamburger-svg.activated .lineMiddle {
+  transform: rotate(-45deg) translateY(1.9px) translateX(-23px);
+}
+
+.hamburger-svg.activated .lineTop {
+  transform: rotate(45deg) translateX(2px);
+}
+
+.hamburger-svg.activated .lineBottom {
+  display: none;
+}
+
+.mobile-links {
+  height: 300px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+
+  display: none;
+
+  left: 100%;
+  position: fixed;
+  z-index: 77;
+  width: 100%;
+  margin-top: 2em;
+}
+.mobile-links a {
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 3em;
+  text-align: center;
+}
+
+.mobile-links a:hover {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+.mobile-links.activated {
+  display: flex;
+
+  left: 0%;
+}
+
+@media (min-width: 765px) {
+  .mobile-links {
+    display: none;
+  }
+  .mobile-links.activated {
+    display: none;
+  }
+  .hamburger-svg {
+    display: none;
+  }
+}
+@media (max-width: 765px) {
+  .menu-links {
+    display: none;
+  }
+  .hero-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .hero-description {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .slide-image {
+    width: 250px;
+    height: 200px;
+  }
+  .previous-btn,
+  .next-btn {
+    height: 150px;
+    width: 2vh;
+  }
+  .aparment-info {
+    height: 300px;
+  }
+  .apartment-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .rent-price {
+    background-color: green;
+    font-size: 1rem;
+    align-items: center;
+    color: white;
+  }
+  .apartment-description {
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
+/*Finding*/
+.finding-container {
+  padding: 2rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.finding-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.finding-content--wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+.finding__image {
+  width: 300px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.finding__text {
+  width: 40%;
+  margin-left: 3rem;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+@media (max-width: 765px) {
+  .finding-content--wrapper {
+    flex-direction: column;
+  }
+  .finding__text ol {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+/*Footer*/
+.footer__container {
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  padding: 2rem 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.4em;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+}
+
+.footer__link--items {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.footer__link--items a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.copyright__info {
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+
+@media (max-width: 765px) {
+  .footer__link--wrapper {
+    flex-direction: column;
+  }
+}
+
+/*For sale */
+.forSale-container {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.forSale__header {
+  margin-top: 100px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.forSale__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: 5px solid black;
+  border-radius: 50%;
+}
